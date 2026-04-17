@@ -1,0 +1,109 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #020409;
+  --foreground: #ffffff;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-foreground selection:bg-primary/30 antialiased;
+    font-feature-settings: "ss01", "ss02", "cv01", "cv02", "cv03";
+  }
+}
+
+@layer components {
+  .grid-bg {
+    background-image: 
+      radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.05) 1px, transparent 0);
+    background-size: 40px 40px;
+  }
+
+  .glow-text {
+    text-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
+  }
+
+  .glass-premium {
+    @apply bg-white/[0.03] border border-white/10 backdrop-blur-2xl transition-all duration-500 shadow-[0_8px_32px_rgba(0,0,0,0.4)];
+  }
+
+  .glass-premium:hover {
+    @apply bg-white/[0.06] border-white/20 shadow-[0_8px_48px_rgba(34,211,238,0.1)];
+  }
+
+  .glass-card {
+    @apply bg-white/[0.02] border border-white/5 backdrop-blur-xl transition-all duration-500;
+  }
+
+  .glass-card:hover {
+    @apply bg-white/[0.05] border-white/10;
+  }
+
+  .bento-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+.bg-glow-mesh {
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(34, 211, 238, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(99, 102, 241, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, #020409 0%, #020409 100%);
+}
+
+.glow-cyan {
+  box-shadow: 0 0 50px -10px rgba(34, 211, 238, 0.25);
+}
+
+.glow-indigo {
+  box-shadow: 0 0 50px -10px rgba(99, 102, 241, 0.25);
+}
+
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #020409;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #111827;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #1f2937;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(1deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.animate-float {
+  animation: float 10s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+  100% { opacity: 0.4; transform: scale(1); }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 8s ease-in-out infinite;
+}
