@@ -63,7 +63,12 @@ export default function IntellectualWeb({
               <div className="absolute w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-cyan-500/5 rounded-full blur-[80px] md:blur-[120px]" />
               
               {/* Network SVG Layer - Arrows between nodes */}
-              <svg className="absolute inset-0 w-full h-full z-10 overflow-visible pointer-events-none">
+              <svg 
+                className="absolute inset-0 w-full h-full pointer-events-none"
+                style={{ zIndex: 5 }}
+                viewBox="-500 -500 1000 1000"
+                preserveAspectRatio="xMidYMid meet"
+              >
                 <defs>
                   <marker
                     id="arrowhead"
@@ -100,9 +105,9 @@ export default function IntellectualWeb({
                           initial={{ pathLength: 0, opacity: 0 }}
                           animate={{ pathLength: 1, opacity: 1 }}
                           transition={{ duration: 2, delay: 1 }}
-                          d={`M calc(50% + ${x1}px) calc(50% + ${y1}px) L calc(50% + ${x2}px) calc(50% + ${y2}px)`}
+                          d={`M ${x1} ${y1} L ${x2} ${y2}`}
                           stroke="rgba(34, 211, 238, 0.2)"
-                          strokeWidth="1"
+                          strokeWidth="2"
                           fill="none"
                           marker-end="url(#arrowhead)"
                           className="drop-shadow-[0_0_8px_rgba(34,211,238,0.4)]"

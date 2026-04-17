@@ -1,5 +1,5 @@
 "use client";
-// Version 1.0.4 - Production Background Video Visibility Fix
+// Version 1.0.6 - Definitive Ghost-Modal & Autoplay Fix
 
 import { motion } from "framer-motion";
 import { 
@@ -269,55 +269,59 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── CROWD / WAITLIST SECTION (Mirofish Style) ── */}
-      <section className="relative pt-40 pb-0 overflow-hidden bg-background">
-        <div className="max-w-7xl mx-auto px-6 text-center relative z-10 mb-[-100px]">
+      {/* ── STUNNING CTA SECTION ── */}
+      <section className="relative py-60 px-6 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-500/5 to-transparent pointer-events-none" />
+        
+        <div className="max-w-7xl mx-auto px-6 text-center relative z-20">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-block px-8 py-3 rounded-full bg-white/5 border border-white/10 backdrop-blur-xl mb-6"
+            className="inline-block px-10 py-3 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-2xl mb-12 shadow-[0_0_50px_rgba(34,211,238,0.15)]"
           >
-            <span className="text-sm font-black text-white/80 uppercase tracking-[0.3em]">Join the Global Think-Tank</span>
+            <span className="text-xs font-black text-white/90 uppercase tracking-[0.6em] glow-text">Exclusive Academic Network</span>
           </motion.div>
-          <h2 className="text-5xl md:text-7xl font-black text-white mb-6 font-outfit uppercase tracking-tighter">
-            Join the waitlist to get <br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-600">notified at launch!</span>
+          
+          <h2 className="text-5xl md:text-[10rem] font-black text-white mb-10 font-outfit uppercase tracking-tighter leading-[0.8] italic">
+            Connecting<br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-white to-indigo-500 drop-shadow-[0_0_30px_rgba(34,211,238,0.5)]">
+              Global Titans.
+            </span>
           </h2>
-          <p className="text-white font-black uppercase tracking-[0.2em] text-sm md:text-base max-w-2xl mx-auto opacity-90">
-            Connect with Indonesian Economist Academia
+          
+          <p className="text-white/80 font-bold uppercase tracking-[0.5em] text-[10px] md:text-sm max-w-4xl mx-auto opacity-70 mb-20 leading-loose">
+            Join the most ambitious Islamic Economics intelligence layer ever built.
           </p>
-        </div>
-
-        {/* The Crowd Illustration */}
-        <div className="relative w-full overflow-hidden mt-12 flex justify-center">
-          <motion.div
-            initial={{ y: 100, opacity: 0 }}
-            whileInView={{ y: 0, opacity: 1 }}
-            transition={{ duration: 1.5, ease: "easeOut" }}
-            className="w-full max-w-[1800px] select-none pointer-events-none"
-          >
-            <img 
-              src="/images/crowd.png" 
-              alt="Researcher Crowd" 
-              className="w-full h-auto object-cover grayscale brightness-150 contrast-125 mix-blend-screen opacity-60"
-            />
-            {/* Gradient Overlay removed for seamless blend with background video */}
-          </motion.div>
+          
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8">
+            <GlowButton className="text-2xl px-16 py-8 rounded-3xl group scale-110" onClick={() => setIsConnectOpen(true)}>
+              Request Invite ↗
+            </GlowButton>
+          </div>
         </div>
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-40 px-6 text-center">
-        <div className="max-w-4xl mx-auto p-16 rounded-[3rem] bg-gradient-to-br from-cyan-900/20 to-indigo-900/20 border border-white/10 relative overflow-hidden">
-          <div className="absolute inset-0 grid-bg opacity-30" />
+      <section className="py-48 px-6 text-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-500/5 to-transparent pointer-events-none" />
+        <div className="max-w-5xl mx-auto p-20 rounded-[4rem] bg-black border border-white/10 relative overflow-hidden shadow-[0_0_100px_rgba(34,211,238,0.1)]">
+          <div className="absolute inset-0 grid-bg opacity-20" />
           <div className="relative z-10">
-            <h2 className="text-5xl md:text-7xl font-black mb-8 font-outfit">Join the Hub.</h2>
-            <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto font-medium">
-              Become part of the most advanced Islamic Economics research network in the world.
+            <h2 className="text-6xl md:text-8xl font-black mb-10 font-outfit uppercase tracking-tighter italic">
+              Ready to <span className="text-cyan-400">Scale?</span>
+            </h2>
+            <p className="text-xl text-white/90 mb-16 max-w-2xl mx-auto font-medium leading-relaxed">
+              Step into the future of Islamic Economics research. Our neural engine is ready to assist your academic journey.
             </p>
             <div className="flex justify-center">
-              <GlowButton className="text-xl px-12 py-6" onClick={() => setIsConnectOpen(true)}>
+              <GlowButton className="text-2xl px-16 py-8 rounded-[2rem]" onClick={() => setIsConnectOpen(true)}>
+                Get Early Access ↗
+              </GlowButton>
+            </div>
+          </div>
+        </div>
+      </section>
                 Connect Now
               </GlowButton>
             </div>
@@ -348,9 +352,10 @@ export default function Home() {
         </div>
       </footer>
 
-      {/* Modals */}
-      <ResearchRepository isOpen={isRepoOpen} onClose={() => setIsRepoOpen(false)} />
+      {/* Modals with specific keys to force clean unmount and prevent ghost overlays */}
+      <ResearchRepository key={isRepoOpen ? 'repo-open' : 'repo-closed'} isOpen={isRepoOpen} onClose={() => setIsRepoOpen(false)} />
       <IntellectualWeb 
+        key={isWebOpen ? 'web-open' : 'web-closed'}
         isOpen={isWebOpen} 
         onClose={() => {
           setIsWebOpen(false);
@@ -358,9 +363,9 @@ export default function Home() {
         }} 
         initialCluster={selectedCluster}
       />
-      <AIModal isOpen={isAIOpen} onClose={() => setIsAIOpen(false)} />
-      <ImpactModal isOpen={isImpactOpen} onClose={() => setIsImpactOpen(false)} />
-      <ConnectModal isOpen={isConnectOpen} onClose={() => setIsConnectOpen(false)} />
+      <AIModal key={isAIOpen ? 'ai-open' : 'ai-closed'} isOpen={isAIOpen} onClose={() => setIsAIOpen(false)} />
+      <ImpactModal key={isImpactOpen ? 'impact-open' : 'impact-closed'} isOpen={isImpactOpen} onClose={() => setIsImpactOpen(false)} />
+      <ConnectModal key={isConnectOpen ? 'connect-open' : 'connect-closed'} isOpen={isConnectOpen} onClose={() => setIsConnectOpen(false)} />
       </main>
     </div>
   );
