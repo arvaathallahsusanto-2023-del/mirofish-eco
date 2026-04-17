@@ -10,9 +10,9 @@ export default function SideVideos() {
       {/* Right Video - Asymmetrical Style */}
       <motion.div
         initial={{ opacity: 0 }}
-        animate={{ opacity: 0.65 }}
+        animate={{ opacity: 0.55 }}
         transition={{ duration: 3, ease: "easeOut" }}
-        className="fixed inset-0 w-full h-full pointer-events-none z-0 overflow-hidden"
+        className="fixed inset-0 w-full h-full pointer-events-none z-0 overflow-hidden bg-[#020409]"
       >
         <video
           autoPlay
@@ -23,8 +23,10 @@ export default function SideVideos() {
         >
           <source src={videoUrl} type="video/mp4" />
         </video>
-        {/* Cinematic masks for a 'rapi' blend - Removed solid linear masks to prevent boxed effect */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,#020409_90%)] opacity-60" />
+        {/* Elegant Vignette & Cinematic Overlays */}
+        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#020409] to-transparent opacity-80" />
+        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#020409] to-transparent opacity-80" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_40%,#020409_100%)] opacity-70" />
       </motion.div>
     </>
   );
