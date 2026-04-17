@@ -23,10 +23,8 @@ export default function SideVideos() {
         >
           <source src={videoUrl} type="video/mp4" />
         </video>
-        {/* Cinematic masks for a 'rapi' blend - Refined Gradients */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
-        <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,#020409_85%)] opacity-80" />
+        {/* Cinematic masks for a 'rapi' blend - Removed solid linear masks to prevent boxed effect */}
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_30%,#020409_90%)] opacity-60" />
       </motion.div>
     </>
   );

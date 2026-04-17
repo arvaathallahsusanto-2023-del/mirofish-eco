@@ -303,9 +303,7 @@ export default function Home() {
               alt="Researcher Crowd" 
               className="w-full h-auto object-cover grayscale brightness-150 contrast-125 mix-blend-screen opacity-60"
             />
-            {/* Gradient Overlay for seamless blend */}
-            <div className="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent h-[40%] bottom-0" />
-            <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-transparent h-[10%] top-0" />
+            {/* Gradient Overlay removed for seamless blend with background video */}
           </motion.div>
         </div>
       </section>
