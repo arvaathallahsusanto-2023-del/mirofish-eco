@@ -57,15 +57,71 @@ export default function IntellectualWeb({
               <div className="absolute inset-0 bg-gradient-to-t from-[#020409] via-transparent to-transparent pointer-events-none" />
               <div className="absolute w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-cyan-500/5 rounded-full blur-[80px] md:blur-[120px]" />
               
-              {/* Central Node */}
-              <motion.div 
-                animate={{ scale: [1, 1.05, 1], opacity: [0.8, 1, 0.8] }}
-                transition={{ duration: 4, repeat: Infinity }}
-                className="relative z-20 w-20 h-20 md:w-32 md:h-32 rounded-2xl md:rounded-3xl bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center shadow-[0_0_50px_rgba(34,211,238,0.3)]"
-              >
-                <MapIcon className="w-10 h-10 md:w-16 md:h-16 text-black" />
-                <span className="absolute -bottom-8 md:-bottom-10 whitespace-nowrap text-white font-black text-[10px] md:text-sm tracking-[0.2em] md:tracking-[0.3em] uppercase">Core</span>
-              </motion.div>
+              {/* Network SVG Layer - Arrows between nodes */}
+              <svg className="absolute inset-0 w-full h-full z-10 overflow-visible pointer-events-none">
+                <defs>
+                  <marker
+                    id="arrowhead"
+                    markerWidth="10"
+                    markerHeight="7"
+                    refX="9"
+                    refY="3.5"
+                    orient="auto"
+                  >
+                    <polygon points="0 0, 10 3.5, 0 7" fill="rgba(34, 211, 238, 0.4)" />
+                  </marker>
+                </defs>
+                
+                {SAMPLE_STAKEHOLDERS.map((s1, i) => {
+                  return SAMPLE_STAKEHOLDERS.map((s2, j) => {
+                    // Only connect professors or specific connections
+                    if (i < j && (s1.cluster === "Expert Professor" && s2.cluster === "Expert Professor")) {
+                      const dist = typeof window !== 'undefined' && window.innerWidth < 768 ? 120 : 260;
+                      const a1 = (i / SAMPLE_STAKEHOLDERS.length) * Math.PI * 2;
+                      const a2 = (j / SAMPLE_STAKEHOLDERS.length) * Math.PI * 2;
+                      
+                      const centerX = "50%";
+                      const centerY = "50%";
+                      
+                      // We need relative coordinates from center
+                      const x1 = Math.cos(a1) * dist;
+                      const y1 = Math.sin(a1) * dist;
+                      const x2 = Math.cos(a2) * dist;
+                      const y2 = Math.sin(a2) * dist;
+
+                      return (
+                        <motion.path
+                          key={`link-${i}-${j}`}
+                          initial={{ pathLength: 0, opacity: 0 }}
+                          animate={{ pathLength: 1, opacity: 1 }}
+                          transition={{ duration: 2, delay: 1 }}
+                          d={`M calc(50% + ${x1}px) calc(50% + ${y1}px) L calc(50% + ${x2}px) calc(50% + ${y2}px)`}
+                          stroke="rgba(34, 211, 238, 0.2)"
+                          strokeWidth="1"
+                          fill="none"
+                          marker-end="url(#arrowhead)"
+                          className="drop-shadow-[0_0_8px_rgba(34,211,238,0.4)]"
+                        />
+                      );
+                    }
+                    return null;
+                  });
+                })}
+              </svg>
+
+              {/* Central Node - DISAPPEARS WHEN CLUSTER IS SELECTED */}
+              {!initialCluster && (
+                <motion.div 
+                  initial={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.5 }}
+                  animate={{ scale: [1, 1.05, 1], opacity: [0.8, 1, 0.8] }}
+                  transition={{ duration: 4, repeat: Infinity }}
+                  className="relative z-20 w-20 h-20 md:w-32 md:h-32 rounded-2xl md:rounded-3xl bg-gradient-to-br from-cyan-400 to-blue-600 flex items-center justify-center shadow-[0_0_50px_rgba(34,211,238,0.3)]"
+                >
+                  <MapIcon className="w-10 h-10 md:w-16 md:h-16 text-black" />
+                  <span className="absolute -bottom-8 md:-bottom-10 whitespace-nowrap text-white font-black text-[10px] md:text-sm tracking-[0.2em] md:tracking-[0.3em] uppercase">Core</span>
+                </motion.div>
+              )}
 
               {/* Stakeholder Nodes (Floating around center) */}
               {SAMPLE_STAKEHOLDERS.map((s, i) => {
