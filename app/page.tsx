@@ -284,9 +284,8 @@ export default function Home() {
             Join the waitlist to get <br/>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-600">notified at launch!</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto font-medium">
-            The World's largest Islamic Economics research network is scaling. 
-            Connect with Prof. Dr. Imron Mawardi, Prof. Dr. Sri Herianingrum, and other global titans.
+          <p className="text-white font-black uppercase tracking-[0.2em] text-sm md:text-base max-w-2xl mx-auto opacity-90">
+            Connect with Indonesian Economist Academia
           </p>
         </div>
 
