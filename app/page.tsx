@@ -71,6 +71,7 @@ export default function Home() {
     setIsWebOpen(true);
   };
 
+  return (
     <div className="relative bg-glow-mesh">
       <SideVideos />
       <main className="min-h-screen bg-transparent selection:bg-cyan-500/30 overflow-x-hidden relative z-10">
