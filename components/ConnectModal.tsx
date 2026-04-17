@@ -31,14 +31,14 @@ export default function ConnectModal({ isOpen, onClose }: ConnectModalProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="absolute inset-0 bg-[#020409]/90 backdrop-blur-xl"
+            className="absolute inset-0 bg-black/90 backdrop-blur-xl"
           />
           
           <motion.div
             initial={{ scale: 0.9, opacity: 0, y: 20 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.9, opacity: 0, y: 20 }}
-            className="relative w-full max-w-xl bg-gradient-to-br from-[#0d1117] to-[#020409] border border-white/10 rounded-[2.5rem] overflow-hidden shadow-[0_0_80px_rgba(34,211,238,0.1)]"
+            className="relative w-full max-w-xl bg-black border border-white/10 rounded-[2.5rem] overflow-hidden shadow-[0_0_80px_rgba(34,211,238,0.1)]"
           >
             {/* Background Glow */}
             <div className="absolute top-0 right-0 w-32 h-32 bg-cyan-500/10 blur-3xl pointer-events-none" />
@@ -49,7 +49,7 @@ export default function ConnectModal({ isOpen, onClose }: ConnectModalProps) {
                 <Send className="w-8 h-8 text-cyan-400" />
               </div>
               <h2 className="text-3xl font-black text-white font-outfit uppercase tracking-tight mb-2">Join the Ecosystem</h2>
-              <p className="text-gray-400 text-sm max-w-sm mx-auto">
+              <p className="text-white/80 text-sm max-w-sm mx-auto">
                 Connect your research with global regulators and industry experts. Be part of the change.
               </p>
             </div>
@@ -110,7 +110,7 @@ export default function ConnectModal({ isOpen, onClose }: ConnectModalProps) {
                     </GlowButton>
                   </div>
                   
-                  <p className="text-[10px] text-center text-gray-500">
+                  <p className="text-[10px] text-center text-white/50">
                     By requesting an invitation, you agree to our Terms of Service and Privacy Policy.
                   </p>
                 </form>

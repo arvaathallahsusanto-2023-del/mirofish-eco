@@ -22,14 +22,14 @@ export default function IntellectualWeb({
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="absolute inset-0 bg-[#020409]/95 backdrop-blur-3xl"
+            className="absolute inset-0 bg-black/95 backdrop-blur-3xl"
           />
           
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
-            className="relative w-full max-w-5xl bg-gradient-to-br from-[#0d1117] to-[#020409] border border-white/10 rounded-3xl md:rounded-[3rem] overflow-hidden flex flex-col h-[90vh] md:h-[85vh] shadow-[0_0_100px_rgba(34,211,238,0.15)]"
+            className="relative w-full max-w-5xl bg-gradient-to-br from-black to-black border border-white/10 rounded-3xl md:rounded-[3rem] overflow-hidden flex flex-col h-[90vh] md:h-[85vh] shadow-[0_0_100px_rgba(34,211,238,0.15)]"
           >
             {/* Header */}
             <div className="p-4 md:p-8 border-b border-white/5 flex items-center justify-between relative z-10">
@@ -39,7 +39,7 @@ export default function IntellectualWeb({
                 </div>
                 <div>
                   <h2 className="text-2xl md:text-4xl font-black text-white font-outfit uppercase tracking-tight">Intellectual Web</h2>
-                  <p className="text-gray-400 text-[10px] md:text-sm mt-0.5 md:mt-1 hidden sm:block">Mapping the interconnected synergy of stakeholders.</p>
+                  <p className="text-white/80 text-[10px] md:text-sm mt-0.5 md:mt-1 hidden sm:block">Mapping the interconnected synergy of stakeholders.</p>
                 </div>
               </div>
               <button 
@@ -54,7 +54,7 @@ export default function IntellectualWeb({
             {/* Visualization Area */}
             <div className="flex-1 relative overflow-hidden flex items-center justify-center bg-grid-pattern bg-fixed pt-16 md:pt-24 pb-12">
               {/* Background Glow */}
-              <div className="absolute inset-0 bg-gradient-to-t from-[#020409] via-transparent to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent pointer-events-none" />
               <div className="absolute w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-cyan-500/5 rounded-full blur-[80px] md:blur-[120px]" />
               
               {/* Network SVG Layer - Arrows between nodes */}
@@ -170,8 +170,8 @@ export default function IntellectualWeb({
                     </div>
                     
                     {/* Tooltip Content - Hidden on mobile to prevent clutter */}
-                    <div className="absolute top-full left-0 mt-4 w-48 p-4 rounded-xl bg-[#0d1117] border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity hidden md:block pointer-events-none z-50">
-                      <p className="text-xs text-gray-300 italic font-medium">"{s.role}"</p>
+                    <div className="absolute top-full left-0 mt-4 w-48 p-4 rounded-xl bg-black border border-white/10 opacity-0 group-hover:opacity-100 transition-opacity hidden md:block pointer-events-none z-50">
+                      <p className="text-xs text-white/90 italic font-medium">"{s.role}"</p>
                       <div className="mt-2 flex items-center gap-2 text-[10px] text-cyan-400 font-bold uppercase">
                         <MessageSquareShare className="w-3 h-3" /> Connected
                       </div>

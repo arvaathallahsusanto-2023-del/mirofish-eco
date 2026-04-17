@@ -124,7 +124,7 @@ export default function Home() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto mb-16 leading-relaxed font-medium opacity-80"
+              className="text-white/90 text-lg md:text-xl max-w-3xl mx-auto mb-16 leading-relaxed font-medium opacity-80"
             >
               The world's most advanced intelligence mapping for Islamic Economics. 
               Connecting global stakeholders, tracing scientific impact, and optimizing sharia-compliant growth.
@@ -169,7 +169,7 @@ export default function Home() {
             <h2 className="text-4xl md:text-6xl font-black mb-6 font-outfit">
               System <span className="text-cyan-400">Architecture</span>
             </h2>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            <p className="text-white/90 text-lg max-w-2xl mx-auto">
               Our infrastructure is built to unify fragmented data into a cohesive knowledge graph.
             </p>
           </div>
@@ -232,7 +232,7 @@ export default function Home() {
                 United by <br/>
                 <span className="text-indigo-400">Vision.</span>
               </h2>
-              <p className="text-xl text-gray-400 mb-10 leading-relaxed font-medium">
+              <p className="text-xl text-white/90 mb-10 leading-relaxed font-medium">
                 Mirofish Eco bridges the gap between theoretical research and practical implementation by connecting four major stakeholder pillars.
               </p>
               

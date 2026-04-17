@@ -16,7 +16,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-[#020409]/60 backdrop-blur-xl border-b border-white/5">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-black/60 backdrop-blur-xl border-b border-white/5">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-cyan-400 to-indigo-600 flex items-center justify-center shadow-lg shadow-cyan-500/20">
@@ -34,7 +34,7 @@ export default function Navbar() {
             <Link
               key={link.name}
               href={link.href}
-              className="text-sm font-semibold text-gray-400 hover:text-cyan-400 transition-colors duration-300 tracking-wide"
+              className="text-sm font-semibold text-white/90 hover:text-cyan-400 transition-colors duration-300 tracking-wide"
             >
               {link.name}
             </Link>
@@ -58,14 +58,14 @@ export default function Navbar() {
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="md:hidden absolute top-20 left-0 right-0 bg-[#020409] border-b border-white/5 p-6 flex flex-col gap-4"
+          className="md:hidden absolute top-20 left-0 right-0 bg-black border-b border-white/5 p-6 flex flex-col gap-4"
         >
           {navLinks.map((link) => (
             <Link
               key={link.name}
               href={link.href}
               onClick={() => setIsOpen(false)}
-              className="text-lg font-bold text-gray-400 hover:text-cyan-400 transition-colors"
+              className="text-lg font-bold text-white/90 hover:text-cyan-400 transition-colors"
             >
               {link.name}
             </Link>

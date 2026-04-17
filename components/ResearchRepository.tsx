@@ -24,14 +24,14 @@ export default function ResearchRepository({ isOpen, onClose }: { isOpen: boolea
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="absolute inset-0 bg-[#020409]/95 backdrop-blur-md"
+            className="absolute inset-0 bg-black/95 backdrop-blur-md"
           />
           
           <motion.div
             initial={{ scale: 0.9, opacity: 0, y: 20 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.9, opacity: 0, y: 20 }}
-            className="relative w-full max-w-5xl bg-[#0d1117] border border-white/10 rounded-[2.5rem] overflow-hidden flex flex-col h-[85vh] shadow-[0_0_100px_rgba(0,0,0,0.5)]"
+            className="relative w-full max-w-5xl bg-black border border-white/10 rounded-[2.5rem] overflow-hidden flex flex-col h-[85vh] shadow-[0_0_100px_rgba(0,0,0,0.5)]"
           >
             {/* Header */}
             <div className="p-8 border-b border-white/5 flex items-center justify-between bg-white/[0.02] relative z-20">
@@ -41,7 +41,7 @@ export default function ResearchRepository({ isOpen, onClose }: { isOpen: boolea
                 </div>
                 <div>
                   <h2 className="text-3xl font-black text-white font-outfit uppercase tracking-tight">Research Repository</h2>
-                  <p className="text-gray-400 text-sm mt-1 flex items-center gap-2">
+                  <p className="text-white/80 text-sm mt-1 flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                     Verified publications by <span className="text-white font-bold">AA Susanto</span>
                   </p>
@@ -58,13 +58,13 @@ export default function ResearchRepository({ isOpen, onClose }: { isOpen: boolea
             {/* Search - Sticky */}
             <div className="p-8 bg-[#0d1117] border-b border-white/5 relative z-10">
               <div className="relative group max-w-2xl mx-auto">
-                <Search className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500 group-focus-within:text-cyan-400 transition-colors" />
+                <Search className="absolute left-6 top-1/2 -translate-y-1/2 w-5 h-5 text-white/60 group-focus-within:text-cyan-400 transition-colors" />
                 <input 
                   type="text"
                   placeholder="Filter and search research index..."
                   value={search}
                   onChange={(e) => setSearch(e.target.value)}
-                  className="w-full bg-white/5 border border-white/10 rounded-2xl py-5 pl-14 pr-8 text-white placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 transition-all font-medium text-lg glass-card"
+                  className="w-full bg-white/5 border border-white/10 rounded-2xl py-5 pl-14 pr-8 text-white placeholder:text-white/40 focus:outline-none focus:ring-2 focus:ring-cyan-500/50 transition-all font-medium text-lg glass-card"
                 />
               </div>
             </div>
@@ -119,7 +119,7 @@ export default function ResearchRepository({ isOpen, onClose }: { isOpen: boolea
                             >
                               <div className="pt-6 mt-6 border-t border-white/10">
                                 <h4 className="text-xs font-black text-cyan-400 uppercase tracking-[0.2em] mb-3">Abstract</h4>
-                                <p className="text-gray-400 leading-relaxed font-medium italic">
+                                <p className="text-white/80 leading-relaxed font-medium italic">
                                   "{res.abstract}"
                                 </p>
                               </div>
@@ -159,7 +159,7 @@ export default function ResearchRepository({ isOpen, onClose }: { isOpen: boolea
             <div className="p-8 bg-white/[0.02] border-t border-white/5 flex items-center justify-between relative z-20">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
-                <span className="text-[10px] text-gray-500 font-black uppercase tracking-[0.2em]">Verified Academic Index</span>
+                <span className="text-[10px] text-white/60 font-black uppercase tracking-[0.2em]">Verified Academic Index</span>
               </div>
               <a 
                 href="https://scholar.google.com/citations?user=7gI4mGYAAAAJ&hl=id" 

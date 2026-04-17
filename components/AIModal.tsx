@@ -26,14 +26,14 @@ export default function AIModal({ isOpen, onClose }: AIModalProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="absolute inset-0 bg-[#020409]/95 backdrop-blur-2xl"
+            className="absolute inset-0 bg-black/95 backdrop-blur-2xl"
           />
           
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.9, opacity: 0 }}
-            className="relative w-full max-w-5xl bg-gradient-to-br from-[#0d1117] to-[#020409] border border-white/10 rounded-[2.5rem] overflow-hidden flex flex-col h-[75vh] shadow-[0_0_80px_rgba(34,211,238,0.1)]"
+            className="relative w-full max-w-5xl bg-gradient-to-br from-black to-black border border-white/10 rounded-[2.5rem] overflow-hidden flex flex-col h-[75vh] shadow-[0_0_80px_rgba(34,211,238,0.1)]"
           >
             {/* Header */}
             <div className="p-8 border-b border-white/5 flex items-center justify-between relative z-10 bg-white/[0.02]">
@@ -43,7 +43,7 @@ export default function AIModal({ isOpen, onClose }: AIModalProps) {
                 </div>
                 <div>
                   <h2 className="text-3xl font-black text-white font-outfit uppercase tracking-tight">AI Semantic Mapping</h2>
-                  <p className="text-gray-400 text-sm mt-1">Autonomous clustering of research themes using LLM Vector Embeddings.</p>
+                  <p className="text-white/80 text-sm mt-1">Autonomous clustering of research themes using LLM Vector Embeddings.</p>
                 </div>
               </div>
               <button 
@@ -78,7 +78,7 @@ export default function AIModal({ isOpen, onClose }: AIModalProps) {
                     >
                       <div className={`w-3 h-3 rounded-full ${c.color} shadow-[0_0_10px_currentColor] mb-1`} />
                       <span className="text-[10px] font-bold text-white uppercase tracking-tighter whitespace-nowrap">{c.name}</span>
-                      <span className="text-[9px] text-gray-500 font-medium">{c.count} Papers</span>
+                      <span className="text-[9px] text-white/60 font-medium">{c.count} Papers</span>
                     </motion.div>
                   );
                 })}
@@ -94,7 +94,7 @@ export default function AIModal({ isOpen, onClose }: AIModalProps) {
                     <Cpu className="w-5 h-5 text-indigo-400" />
                     Neural Insights
                   </h3>
-                  <p className="text-sm text-gray-400 leading-relaxed italic border-l-2 border-indigo-500/30 pl-4">
+                  <p className="text-sm text-white/90 leading-relaxed italic border-l-2 border-indigo-500/30 pl-4">
                     "The neural engine has identified a significant semantic overlap between <span className="text-indigo-400">Waqf Assets</span> and <span className="text-cyan-400">Sustainable Infrastructure</span> in 2024 publications, suggesting a shift towards long-term social impact."
                   </p>
                 </div>
@@ -102,7 +102,7 @@ export default function AIModal({ isOpen, onClose }: AIModalProps) {
                 <div className="grid grid-cols-2 gap-4">
                   {clusters.slice(0, 4).map(c => (
                     <div key={c.name} className="p-4 rounded-2xl bg-white/5 border border-white/5">
-                      <div className="text-[10px] font-bold text-gray-500 uppercase mb-1">{c.name}</div>
+                      <div className="text-[10px] font-bold text-white/60 uppercase mb-1">{c.name}</div>
                       <div className="flex items-center justify-between">
                         <span className="text-xl font-black text-white">{c.count}</span>
                         <span className="text-[10px] text-emerald-400 font-bold">{c.growth}</span>

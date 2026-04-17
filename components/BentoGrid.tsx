@@ -34,7 +34,7 @@ export function BentoCard({
           <Icon className={`w-6 h-6 ${colorClass}`} />
         </div>
         <h3 className="text-xl md:text-2xl font-bold mb-3">{title}</h3>
-        <p className="text-gray-400 leading-relaxed text-sm md:text-base font-medium">
+        <p className="text-white/80 leading-relaxed text-sm md:text-base font-medium">
           {description}
         </p>
       </div>

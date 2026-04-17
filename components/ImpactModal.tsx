@@ -24,14 +24,14 @@ export default function ImpactModal({ isOpen, onClose }: ImpactModalProps) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             onClick={onClose}
-            className="absolute inset-0 bg-[#020409]/95 backdrop-blur-2xl"
+            className="absolute inset-0 bg-black/95 backdrop-blur-2xl"
           />
           
           <motion.div
             initial={{ scale: 0.9, opacity: 0, y: 20 }}
             animate={{ scale: 1, opacity: 1, y: 0 }}
             exit={{ scale: 0.9, opacity: 0, y: 20 }}
-            className="relative w-full max-w-5xl bg-[#0d1117] border border-white/10 rounded-[2.5rem] overflow-hidden flex flex-col h-[80vh] shadow-[0_0_80px_rgba(34,211,238,0.1)]"
+            className="relative w-full max-w-5xl bg-black border border-white/10 rounded-[2.5rem] overflow-hidden flex flex-col h-[80vh] shadow-[0_0_80px_rgba(34,211,238,0.1)]"
           >
             {/* Header */}
             <div className="p-8 border-b border-white/5 flex items-center justify-between bg-white/[0.02]">
@@ -41,7 +41,7 @@ export default function ImpactModal({ isOpen, onClose }: ImpactModalProps) {
                 </div>
                 <div>
                   <h2 className="text-3xl font-black text-white font-outfit uppercase tracking-tight">Impact Tracker v2.0</h2>
-                  <p className="text-gray-400 text-sm mt-1">Measuring the tangible influence of research on global Islamic Economic policy.</p>
+                  <p className="text-white/80 text-sm mt-1">Measuring the tangible influence of research on global Islamic Economic policy.</p>
                 </div>
               </div>
               <button 
@@ -63,7 +63,7 @@ export default function ImpactModal({ isOpen, onClose }: ImpactModalProps) {
                       {m.growth && <span className="text-[10px] font-black text-emerald-400 bg-emerald-500/10 px-2 py-1 rounded-lg">{m.growth}</span>}
                     </div>
                     <div className="text-3xl font-black text-white mb-1">{m.value}</div>
-                    <div className="text-xs font-bold text-gray-500 uppercase tracking-widest leading-none">{m.label}</div>
+                    <div className="text-xs font-bold text-white/60 uppercase tracking-widest leading-none">{m.label}</div>
                     {m.sub && <div className="text-[10px] text-gray-600 mt-1">{m.sub}</div>}
                   </div>
                 ))}
