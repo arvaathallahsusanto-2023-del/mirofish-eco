@@ -71,10 +71,10 @@ export default function Home() {
     setIsWebOpen(true);
   };
 
-  return (
-    <main className="min-h-screen bg-glow-mesh selection:bg-cyan-500/30 overflow-x-hidden">
-      <Navbar />
+    <div className="relative">
       <SideVideos />
+      <main className="min-h-screen bg-glow-mesh selection:bg-cyan-500/30 overflow-x-hidden relative z-10">
+        <Navbar />
       
       {/* ── HERO SECTION ── */}
       <section id="ecosystem" className="relative pt-60 pb-32 px-6 overflow-hidden">
@@ -297,7 +297,7 @@ export default function Home() {
             className="w-full max-w-[1800px] select-none pointer-events-none"
           >
             <img 
-              src="/C:/Users/ARSY/.gemini/antigravity/brain/fdf6b81b-cd56-4972-937d-3f93a1c11cb4/researcher_crowd_illustration_1776450391682.png" 
+              src="/images/crowd.png" 
               alt="Researcher Crowd" 
               className="w-full h-auto object-cover grayscale brightness-150 contrast-125 mix-blend-screen opacity-60"
             />
@@ -362,6 +362,7 @@ export default function Home() {
       <AIModal isOpen={isAIOpen} onClose={() => setIsAIOpen(false)} />
       <ImpactModal isOpen={isImpactOpen} onClose={() => setIsImpactOpen(false)} />
       <ConnectModal isOpen={isConnectOpen} onClose={() => setIsConnectOpen(false)} />
-    </main>
+      </main>
+    </div>
   );
 }

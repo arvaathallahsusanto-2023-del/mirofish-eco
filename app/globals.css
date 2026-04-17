@@ -50,9 +50,9 @@
 
 .bg-glow-mesh {
   background: 
-    radial-gradient(circle at 10% 20%, rgba(34, 211, 238, 0.08) 0%, transparent 40%),
-    radial-gradient(circle at 90% 80%, rgba(99, 102, 241, 0.08) 0%, transparent 40%),
-    radial-gradient(circle at 50% 50%, #020409 0%, #020409 100%);
+    radial-gradient(circle at 10% 20%, rgba(34, 211, 238, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(99, 102, 241, 0.12) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(2, 4, 9, 0.7) 0%, #020409 100%);
 }
 
 .glow-cyan {
