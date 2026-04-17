@@ -71,9 +71,9 @@ export default function Home() {
     setIsWebOpen(true);
   };
 
-    <div className="relative">
+    <div className="relative bg-glow-mesh">
       <SideVideos />
-      <main className="min-h-screen bg-glow-mesh selection:bg-cyan-500/30 overflow-x-hidden relative z-10">
+      <main className="min-h-screen bg-transparent selection:bg-cyan-500/30 overflow-x-hidden relative z-10">
         <Navbar />
       
       {/* ── HERO SECTION ── */}
