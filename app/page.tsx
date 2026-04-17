@@ -1,4 +1,5 @@
 "use client";
+// Version 1.0.4 - Production Background Video Visibility Fix
 
 import { motion } from "framer-motion";
 import { 
