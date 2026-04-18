@@ -323,12 +323,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-                Connect Now
-              </GlowButton>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* ── FOOTER ── */}
       <footer className="py-20 px-6 border-t border-white/5">
