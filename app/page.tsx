@@ -1,5 +1,5 @@
 "use client";
-// Version 1.0.6 - Definitive Ghost-Modal & Autoplay Fix
+// Version 1.0.8 - Definitive Ghost-Modal, Autoplay, & Titans Overhaul Fix
 
 import { motion } from "framer-motion";
 import { 
@@ -269,34 +269,35 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── STUNNING CTA SECTION ── */}
-      <section className="relative py-60 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-500/5 to-transparent pointer-events-none" />
+      {/* ── STUNNING CTA SECTION: CONNECTING GLOBAL TITANS ── */}
+      <section className="relative py-64 px-6 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-cyan-500/10 to-transparent pointer-events-none" />
         
         <div className="max-w-7xl mx-auto px-6 text-center relative z-20">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="inline-block px-10 py-3 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-2xl mb-12 shadow-[0_0_50px_rgba(34,211,238,0.15)]"
+            className="inline-block px-12 py-4 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-3xl mb-16 shadow-[0_0_60px_rgba(34,211,238,0.2)]"
           >
-            <span className="text-xs font-black text-white/90 uppercase tracking-[0.6em] glow-text">Exclusive Academic Network</span>
+            <span className="text-xs font-black text-white/90 uppercase tracking-[0.8em] glow-text">The World Is Scaling</span>
           </motion.div>
           
-          <h2 className="text-5xl md:text-[10rem] font-black text-white mb-10 font-outfit uppercase tracking-tighter leading-[0.8] italic">
+          <h2 className="text-5xl md:text-[11rem] font-black text-white mb-12 font-outfit uppercase tracking-tighter leading-[0.75] italic">
             Connecting<br/>
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-white to-indigo-500 drop-shadow-[0_0_30px_rgba(34,211,238,0.5)]">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-white to-indigo-500 drop-shadow-[0_0_40px_rgba(34,211,238,0.6)]">
               Global Titans.
             </span>
           </h2>
           
-          <p className="text-white/80 font-bold uppercase tracking-[0.5em] text-[10px] md:text-sm max-w-4xl mx-auto opacity-70 mb-20 leading-loose">
-            Join the most ambitious Islamic Economics intelligence layer ever built.
+          <p className="text-white font-black uppercase tracking-[0.6em] text-[10px] md:text-sm max-w-5xl mx-auto opacity-80 mb-24 leading-loose">
+             Connect With Indonesian Economist Academia <br/>
+             <span className="text-[8px] md:text-xs opacity-50 tracking-[0.4em]">Tracing Scientific Impact • Bridging Policy Gaps</span>
           </p>
           
-          <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-            <GlowButton className="text-2xl px-16 py-8 rounded-3xl group scale-110" onClick={() => setIsConnectOpen(true)}>
-              Request Invite ↗
+          <div className="flex flex-col md:flex-row items-center justify-center gap-10">
+            <GlowButton className="text-3xl px-20 py-10 rounded-[2.5rem] group scale-110 shadow-[0_0_80px_rgba(34,211,238,0.4)]" onClick={() => setIsConnectOpen(true)}>
+              Request Access ↗
             </GlowButton>
           </div>
         </div>
